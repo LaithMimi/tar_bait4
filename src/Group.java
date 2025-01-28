@@ -1,8 +1,7 @@
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
-import java.util.Iterator;
 
-public class Group implements Iterable<Integer> {
+public class Group {
     private LinkedList<Integer> elements;
 
     public Group() {
@@ -26,7 +25,12 @@ public class Group implements Iterable<Integer> {
     }
 
     public boolean containsElement(int x) {
-        return elements.contains(x);
+        for (int element : elements) {
+            if (element == x) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Group intersection(Group R) {
@@ -50,24 +54,15 @@ public class Group implements Iterable<Integer> {
         return result;
     }
 
-    @Override
-    public Iterator<Integer> iterator() {
-        return new GroupIterator();
-    }
-
-    private class GroupIterator implements Iterator<Integer> {
+    public class GroupIterator {
         private int currentIndex = 0;
 
-        @Override
         public boolean hasNext() {
             return currentIndex < elements.size();
         }
 
-        @Override
         public Integer next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
+            if (!hasNext()) throw new NoSuchElementException();
             return elements.get(currentIndex++);
         }
     }
