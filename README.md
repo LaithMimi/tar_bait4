@@ -1,5 +1,5 @@
 
-# tar_bait4
+# tar_bait4_JUnit tests
 
 ## Overview
 `tar_bait4` is a Java-based project that includes implementations for managing a supermarket catalog and account, as well as operations on groups of integers. The project is divided into two main parts, each located in different packages.
