@@ -1,3 +1,5 @@
+package tar_bait4_q2;
+
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
