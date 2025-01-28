@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 public class Group {
-    private LinkedList<Integer> elements;
+    protected LinkedList<Integer> elements;
 
     public Group() {
         elements = new LinkedList<>();
